@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    /* Adicionado para compensar o tamanho da navbar "fixed-top" e evitar sobreposição */
+    padding-top: 70px;
+}
+
+/* Limitando a altura da logo para ela não distorcer a Navbar */
+.logo {
+    max-height: 40px;
+    width: auto;
+}
+
+.hero {
+    /* Como eu não tenho o arquivo 'hero.jpg', você pode colocar uma cor de fundo reserva (ex: #333) caso a imagem falhe */
+    background-color: #333;
+    background-image: url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    /* Alterei de 100vh para calc(100vh - 70px) para descontar o espaço do header */
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adicionado para centralizar na horizontal */
+}
+
+.hero h1 {
+    text-shadow: 2px 2px 10px black;
+}
+
+.card {
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
