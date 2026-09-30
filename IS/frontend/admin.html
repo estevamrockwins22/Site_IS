@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IS. / ADM</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="admin.css"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=IBM+Plex+Mono&display=swap" rel="stylesheet"></head>
+<body>
+<header class="site-header"><a class="brand" href="index.html">IS<span>.</span></a><strong>PAINEL ADM</strong><button id="logout" class="btn btn-ghost">SAIR</button></header>
+<main class="admin-wrap">
+<section id="loginView" class="admin-card">
+<h1>ENTRAR</h1>
+<p class="small">Acesso restrito à administração da banda.</p>
+<input id="email" type="email" placeholder="E-MAIL">
+<input id="password" type="password" placeholder="SENHA">
+<button id="login" class="btn">ENTRAR</button>
+<p id="loginStatus"></p>
+</section>
+<section id="dashboard" hidden>
+<div class="admin-head"><div><span class="eyebrow">CONTROLE DO SITE</span><h1>ADMINISTRAÇÃO</h1></div></div>
+<div class="admin-grid">
+<article class="admin-card"><h2>HISTÓRIA</h2><textarea id="history" rows="10"></textarea><button class="btn" id="saveHistory">SALVAR</button></article>
+<article class="admin-card"><h2>INTEGRANTES</h2><div id="membersAdmin"></div><button class="btn" id="addMember">+ INTEGRANTE</button></article>
+<article class="admin-card wide"><h2>ÁLBUNS</h2><div id="albumsAdmin"></div><button class="btn" id="addAlbum">+ ÁLBUM</button></article>
+<article class="admin-card wide"><h2>SHOWS</h2><div id="showsAdmin"></div><button class="btn" id="addShow">+ SHOW</button></article>
+<article class="admin-card wide"><h2>AVISOS</h2><div id="noticesAdmin"></div><button class="btn" id="addNotice">+ AVISO</button></article>
+<article class="admin-card wide"><h2>LINKS</h2><div id="linksAdmin"></div><button class="btn" id="addLink">+ LINK</button></article>
+</div>
+</section>
+</main>
+<script>
+window.API_BASE="http://localhost:3000/api";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin.js"></script>
+</body>
+</html>
