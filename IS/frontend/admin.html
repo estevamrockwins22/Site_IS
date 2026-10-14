@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>IDENTIDADE SUBESTIMADA — Administração</title>
+  <link rel="icon" type="image/png" href="img/icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Identidade Subestimada">
+    <img src="img/icone.png" alt="Identidade Subestimada" style="height:36px;width:auto;vertical-align:middle">
+  </a>
+  <strong class="admin-title">PAINEL ADM</strong>
+  <div class="header-actions">
+    <a class="btn btn-ghost" href="index.html">VER SITE</a>
+    <button id="logoutBtn" class="btn btn-ghost" type="button" hidden>SAIR</button>
+  </div>
+</header>
+
+<main class="admin-wrap">
+
+  <section id="loginView" class="admin-login">
+    <div class="admin-card login-card">
+      <p class="eyebrow">ACESSO RESTRITO</p>
+      <h1>ENTRAR</h1>
+      <p class="small">Painel de administração da Identidade Subestimada.</p>
+      <div class="form-stack">
+        <input id="loginUser" type="text" placeholder="LOGIN" autocomplete="username">
+        <input id="loginPass" type="password" placeholder="SENHA" autocomplete="current-password">
+        <button id="loginBtn" class="btn" type="button">ENTRAR</button>
+        <p id="loginStatus" class="status-msg"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboard" hidden>
+
+    <div class="admin-head">
+      <div>
+        <span class="eyebrow">CONTROLE DO SITE</span>
+        <h1>ADMINISTRAÇÃO</h1>
+        <p class="small">Todas as alterações são salvas localmente no navegador (sem backend).</p>
+      </div>
+      <button id="resetDataBtn" class="btn btn-ghost" type="button">RESTAURAR PADRÃO</button>
+    </div>
+
+    <div class="admin-tabs" role="tablist">
+      <button class="tab active" data-tab="historia" type="button">HISTÓRIA</button>
+      <button class="tab" data-tab="integrantes" type="button">INTEGRANTES</button>
+      <button class="tab" data-tab="albuns" type="button">ÁLBUNS</button>
+      <button class="tab" data-tab="galeria" type="button">GALERIA</button>
+      <button class="tab" data-tab="shows" type="button">SHOWS</button>
+      <button class="tab" data-tab="avisos" type="button">AVISOS</button>
+      <button class="tab" data-tab="redes" type="button">REDES</button>
+    </div>
+
+    <div class="tab-panel active" id="panel-historia">
+      <article class="admin-card">
+        <h2>HISTÓRIA DA BANDA</h2>
+        <textarea id="historyText" rows="12" placeholder="Texto da história..."></textarea>
+        <div class="admin-actions">
+          <button class="btn" id="saveHistory" type="button">SALVAR HISTÓRIA</button>
+        </div>
+      </article>
+    </div>
+
+    <div class="tab-panel" id="panel-integrantes">
+      <article class="admin-card">
+        <div class="panel-head">
+          <h2>INTEGRANTES</h2>
+          <button class="btn" id="addMember" type="button">+ INTEGRANTE</button>
+        </div>
+        <div id="membersAdmin"></div>
+      </article>
+    </div>
+
+    <div class="tab-panel" id="panel-albuns">
+      <article class="admin-card">
+        <div class="panel-head">
+          <h2>DISCOGRAFIA</h2>
+          <button class="btn" id="addAlbum" type="button">+ ÁLBUM</button>
+        </div>
+        <div id="albumsAdmin"></div>
+      </article>
+    </div>
+
+    <div class="tab-panel" id="panel-galeria">
+      <article class="admin-card">
+        <div class="panel-head">
+          <h2>GALERIA</h2>
+          <button class="btn" id="addGallery" type="button">+ IMAGEM</button>
+        </div>
+        <div id="galleryAdmin"></div>
+      </article>
+    </div>
+
+    <div class="tab-panel" id="panel-shows">
+      <article class="admin-card">
+        <div class="panel-head">
+          <h2>AGENDA DE SHOWS</h2>
+          <button class="btn" id="addShow" type="button">+ SHOW</button>
+        </div>
+        <div id="showsAdmin"></div>
+      </article>
+    </div>
+
+    <div class="tab-panel" id="panel-avisos">
+      <article class="admin-card">
+        <div class="panel-head">
+          <h2>AVISOS / MURAL</h2>
+          <button class="btn" id="addNotice" type="button">+ AVISO</button>
+        </div>
+        <div id="noticesAdmin"></div>
+      </article>
+    </div>
+
+    <div class="tab-panel" id="panel-redes">
+      <article class="admin-card">
+        <div class="panel-head">
+          <h2>LINKS / REDES SOCIAIS</h2>
+          <button class="btn" id="addLink" type="button">+ LINK</button>
+        </div>
+        <div id="linksAdmin"></div>
+      </article>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
